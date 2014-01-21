@@ -90,7 +90,7 @@ public class TweeterAuth {
 
         try {
             // The factory instance is re-useable and thread safe.
-            List<Status> statuses = twitter.getHomeTimeline();
+            List<Status> statuses = twitter.getMentionsTimeline();
             System.out.println("Showing home timeline.");
             for (Status status : statuses) {
                 System.out.println(status.getUser().getName() + ":" +
@@ -100,8 +100,6 @@ public class TweeterAuth {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
-
-//        TwitterServices.statusUpdate("Funcionaaa", accessTokenValues.get(TwitterServices.OAH_TOKEN));
     }
 
 }

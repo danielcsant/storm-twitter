@@ -16,7 +16,5 @@ public class TwitterCredentials {
 	// Twitter Services
 	protected static final String TWITTER_SERVICES_CONSUMER_KEY = "Rcif1a6M0Amqvx5xIBRegg";
 	protected static final String TWITTER_SERVICES_CONSUMER_SECRET = "eIlCsI0smBj3mKzKG23Ddezn4dxBCUZHwcZ88fmpZs";
-	protected static final String TWITTER_SERVICES_ACCESS_TOKEN = "261184202-nC17ym8tHLCbxpNG28WGx7rVSf3IY8gmBpHPxoGH";
-	protected static final String TWITTER_SERVICES_ACCESS_TOKEN_SECRET = "KzptuRsCaN4dWvvtVHYHEmv6W7YgSeQ1MjBdCwaTh4Rym";
 
 }
