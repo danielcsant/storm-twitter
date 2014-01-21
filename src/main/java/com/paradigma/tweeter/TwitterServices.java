@@ -571,7 +571,7 @@ public class TwitterServices {
 	/*
 	 * update status - post something
 	 */
-	public static void statusUpdate (String status) throws TwitterException {
+	public static void statusUpdate(String status, String oauthToken) throws TwitterException {
 
 		// generate values for this request
 		String _numberUsedOnce = generateNumberUsedOnce();
@@ -583,7 +583,7 @@ public class TwitterServices {
 		signatureParameters.put(OAH_NONCE, _numberUsedOnce);
 		signatureParameters.put(OAH_TIMESTAMP, _timeStamp);
 		// include access token
-		signatureParameters.put(OAH_TOKEN, TwitterCredentials.TWITTER_SERVICES_ACCESS_TOKEN);
+		signatureParameters.put(OAH_TOKEN, oauthToken);
 		// include status in signature, although actually sent in the body
 		signatureParameters.put(TWITTER_STATUSES_UPDATE_KEY, status);
 
@@ -603,7 +603,7 @@ public class TwitterServices {
 		authorisationParameters.put(OAH_NONCE, _numberUsedOnce);
 		authorisationParameters.put(OAH_TIMESTAMP, _timeStamp);
 		// include access token
-		authorisationParameters.put(OAH_TOKEN, TwitterCredentials.TWITTER_SERVICES_ACCESS_TOKEN);
+		authorisationParameters.put(OAH_TOKEN, oauthToken);
 		// do not include the status, sent in the body
 		String authHeader = generateOauthHeader(authorisationParameters, oauthSignature);
 		
@@ -658,7 +658,7 @@ public class TwitterServices {
 
         // make the HTTP request
         String responseBody = makeHttpRequest(TWITTER_ENDPOINT_HOST, TWITTER_MENTIONS_TIMELINE_ENDPOINT_PATH,
-                authHeader, requestBody, METHOD_POST);
+                authHeader, requestBody, METHOD_GET);
         logger.info(responseBody);
     }
 	

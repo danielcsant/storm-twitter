@@ -1,6 +1,6 @@
 package com.paradigma.tweeter;
 
-public class TwitterException extends Exception {
+public class TwitterException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
